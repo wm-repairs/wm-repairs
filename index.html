@@ -1,29 +1,638 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domestic Appliance Repairs</title>
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-    header { background: #0056b3; color: white; padding: 2rem; text-align: center; }
-    section { padding: 2rem; max-width: 800px; margin: auto; }
-    footer { text-align: center; padding: 1rem; background: #f1f1f1; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WM Repairs - Domestic Appliance Repairs & Servicing West Midlands</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wmNavy: {
+                            DEFAULT: '#0B2341',
+                            light: '#14355F',
+                            dark: '#06162B',
+                        },
+                        wmGold: {
+                            DEFAULT: '#F5B000',
+                            hover: '#E0A000',
+                            light: '#FFDC73',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gear-border {
+            box-shadow: 0 0 0 4px #F5B000, 0 10px 25px -5px rgba(11, 35, 65, 0.3);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Domestic Appliance Repairs</h1>
-    <p>Reliable repairs for washing machines, ovens, and more.</p>
-  </header>
-  <section>
-    <h2>About Our Services</h2>
-    <p>Welcome to our family-run appliance repair business. We offer fast, local diagnostics and repairs.</p>
-    <h2>Contact Us</h2>
-    <p>Phone: 01234 567890</p>
-  </section>
-  <footer>
-    <p>&copy; 2026 Domestic Appliance Repairs</p>
-  </footer>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-wmNavy-dark text-white text-xs sm:text-sm py-2 px-4 border-b-2 border-wmGold">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-wmGold"></i>
+                <span>Covering West Midlands, Worcestershire, Shropshire, Warwickshire & Staffordshire</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:07438349585" class="hover:text-wmGold transition-colors font-semibold flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone text-wmGold"></i> 07438 349585
+                </a>
+                <a href="https://wa.me/447438349585" target="_blank" class="hover:text-green-400 transition-colors flex items-center gap-1">
+                    <i class="fa-brands fa-whatsapp text-green-500 font-bold"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-wmNavy text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full bg-wmNavy border-2 border-wmGold flex items-center justify-center relative overflow-hidden shadow-lg group-hover:scale-105 transition-transform">
+                        <!-- Simulated Gear Logo Badge -->
+                        <div class="absolute inset-0 border-2 border-dashed border-wmGold rounded-full animate-spin-slow"></div>
+                        <div class="flex items-center justify-center text-wmGold text-lg font-black">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-white block leading-none">WM <span class="text-wmGold">REPAIRS</span></span>
+                        <span class="text-xs text-gray-300 font-medium tracking-wider">APPLIANCE SPECIALISTS</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="#services" class="hover:text-wmGold transition-colors">Services</a>
+                    <a href="#areas" class="hover:text-wmGold transition-colors">Areas Covered</a>
+                    <a href="#about" class="hover:text-wmGold transition-colors">Why Choose Us</a>
+                    <a href="#contact" class="hover:text-wmGold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Call To Action Right Side -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="https://wa.me/447438349585" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-2.5 rounded-lg transition-all flex items-center gap-2 text-sm shadow-md">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp Us</span>
+                    </a>
+                    <a href="tel:07438349585" class="bg-wmGold hover:bg-wmGold-hover text-wmNavy font-bold px-4 py-2.5 rounded-lg transition-all flex items-center gap-2 text-sm shadow-md">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>07438 349585</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-wmGold focus:outline-none p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-wmNavy-light border-t border-gray-700 px-4 pt-3 pb-6 space-y-3">
+            <a href="#services" class="block py-2 text-white hover:text-wmGold font-medium border-b border-gray-700">Services</a>
+            <a href="#areas" class="block py-2 text-white hover:text-wmGold font-medium border-b border-gray-700">Areas Covered</a>
+            <a href="#about" class="block py-2 text-white hover:text-wmGold font-medium border-b border-gray-700">Why Choose Us</a>
+            <a href="#contact" class="block py-2 text-white hover:text-wmGold font-medium border-b border-gray-700">Contact</a>
+            
+            <div class="pt-2 flex flex-col gap-2">
+                <a href="tel:07438349585" class="w-full bg-wmGold text-wmNavy font-bold py-3 rounded-lg text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call 07438 349585
+                </a>
+                <a href="https://wa.me/447438349585" target="_blank" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg text-center flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-wmNavy text-white py-16 lg:py-24 overflow-hidden border-b-4 border-wmGold">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#F5B000_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Hero Content Left -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-wmGold/20 border border-wmGold text-wmGold px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+                            <i class="fa-solid fa-shield-halved"></i> Reliable & Fast Local Appliance Repairs
+                        </div>
+                        
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                            Expert Domestic Appliance Repairs in the <span class="text-wmGold">West Midlands</span>
+                        </h1>
+                        
+                        <p class="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0">
+                            Fast, reliable repairs and maintenance for Washing Machines, Cookers, Ovens, Hobs, Dishwashers, and Tumble Dryers across the Midlands.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                            <a href="tel:07438349585" class="bg-wmGold hover:bg-wmGold-hover text-wmNavy font-extrabold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                                <span>Call 07438 349585</span>
+                            </a>
+                            <a href="https://wa.me/447438349585" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                <span>Message on WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <!-- Highlights Badge Row -->
+                        <div class="pt-6 grid grid-cols-3 gap-2 border-t border-gray-700/60 max-w-md mx-auto lg:mx-0 text-center text-xs sm:text-sm">
+                            <div class="flex flex-col items-center">
+                                <i class="fa-solid fa-clock text-wmGold text-xl mb-1"></i>
+                                <span class="font-semibold">Quick Response</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fa-solid fa-screwdriver-wrench text-wmGold text-xl mb-1"></i>
+                                <span class="font-semibold">All Major Brands</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i class="fa-solid fa-thumbs-up text-wmGold text-xl mb-1"></i>
+                                <span class="font-semibold">Honest Pricing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Badge Graphic / Photo Right -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-wmNavy border-8 border-wmGold flex flex-col items-center justify-center text-center p-6 shadow-2xl gear-border">
+                            <div class="w-16 h-16 bg-wmGold rounded-full flex items-center justify-center text-wmNavy text-3xl font-black mb-3 shadow-inner">
+                                <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-wider">WM REPAIRS</h2>
+                            <p class="text-wmGold font-bold text-sm sm:text-base mt-1 tracking-widest uppercase">Appliance Specialist</p>
+                            <div class="w-24 h-1 bg-wmGold my-3 rounded-full"></div>
+                            <a href="tel:07438349585" class="text-xl sm:text-2xl font-black text-white hover:text-wmGold transition-colors tracking-tight">
+                                07438 349585
+                            </a>
+                            <p class="text-xs text-gray-300 mt-2">Serving West Midlands & Surrounding Areas</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-black text-wmNavy mb-3">Our Repair Services</h2>
+                    <p class="text-gray-600 text-base sm:text-lg">We repair and maintain a wide variety of domestic appliances with expert diagnosis and quality service.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service 1: Washing Machines -->
+                    <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-wmGold transition-all">
+                        <div class="w-14 h-14 bg-wmNavy rounded-xl flex items-center justify-center text-wmGold text-2xl font-bold mb-5 shadow">
+                            <i class="fa-solid fa-soap"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-wmNavy mb-2">Washing Machine Repairs</h3>
+                        <p class="text-gray-600 text-sm mb-4">Fixing drainage faults, drum spinning issues, door seal leaks, electrical faults, and noise issues on all major models.</p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-wmNavy bg-wmGold/10 p-2.5 rounded-lg">
+                            <i class="fa-solid fa-check text-wmGold"></i> Models serviced include AEG, Beko, Bosch, Hotpoint & more
+                        </div>
+                    </div>
+
+                    <!-- Service 2: Cookers & Ovens -->
+                    <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-wmGold transition-all">
+                        <div class="w-14 h-14 bg-wmNavy rounded-xl flex items-center justify-center text-wmGold text-2xl font-bold mb-5 shadow">
+                            <i class="fa-solid fa-fire-burner"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-wmNavy mb-2">Cooker, Oven & Hob Repairs</h3>
+                        <p class="text-gray-600 text-sm mb-4">Heating element replacements, thermostat fixes, door hinge repairs, and fan fixes for freestanding and built-in cookers.</p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-wmNavy bg-wmGold/10 p-2.5 rounded-lg">
+                            <i class="fa-solid fa-check text-wmGold"></i> Zanussi, Beko, Indesit, Belling & all leading brands
+                        </div>
+                    </div>
+
+                    <!-- Service 3: Tumble Dryers -->
+                    <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-wmGold transition-all">
+                        <div class="w-14 h-14 bg-wmNavy rounded-xl flex items-center justify-center text-wmGold text-2xl font-bold mb-5 shadow">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-wmNavy mb-2">Tumble Dryer Repairs</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vented, condenser, and heat pump dryers. Resolving heating failures, belt snapping, drum stopping, and sensor issues.</p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-wmNavy bg-wmGold/10 p-2.5 rounded-lg">
+                            <i class="fa-solid fa-check text-wmGold"></i> Fast fault diagnostic & thermal safety checks
+                        </div>
+                    </div>
+
+                    <!-- Service 4: Dishwashers -->
+                    <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-wmGold transition-all">
+                        <div class="w-14 h-14 bg-wmNavy rounded-xl flex items-center justify-center text-wmGold text-2xl font-bold mb-5 shadow">
+                            <i class="fa-solid fa-jug-detergent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-wmNavy mb-2">Dishwasher Repairs</h3>
+                        <p class="text-gray-600 text-sm mb-4">Clearing blockages, replacing spray arms, fixing water heating problems, door latches, and pump replacements.</p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-wmNavy bg-wmGold/10 p-2.5 rounded-lg">
+                            <i class="fa-solid fa-check text-wmGold"></i> Integrated & freestanding models catered for
+                        </div>
+                    </div>
+
+                    <!-- Service 5: Diagnostics & Servicing -->
+                    <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-wmGold transition-all">
+                        <div class="w-14 h-14 bg-wmNavy rounded-xl flex items-center justify-center text-wmGold text-2xl font-bold mb-5 shadow">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-wmNavy mb-2">Fault Diagnosis & Servicing</h3>
+                        <p class="text-gray-600 text-sm mb-4">Accurate fault finding to give you honest advice on repair vs replacement, saving you time and extra expense.</p>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-wmNavy bg-wmGold/10 p-2.5 rounded-lg">
+                            <i class="fa-solid fa-check text-wmGold"></i> Professional & transparent assessments
+                        </div>
+                    </div>
+
+                    <!-- Service 6: General Maintenance -->
+                    <div class="bg-gray-50 border-2 border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-wmGold transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 bg-wmNavy rounded-xl flex items-center justify-center text-wmGold text-2xl font-bold mb-5 shadow">
+                                <i class="fa-solid fa-gears"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-wmNavy mb-2">General Domestic Appliance Maintenance</h3>
+                            <p class="text-gray-600 text-sm mb-4">Routine checkups, safety checks, and part replacements to extend the operational life of your home appliances.</p>
+                        </div>
+                        <a href="tel:07438349585" class="inline-block text-center bg-wmNavy hover:bg-wmNavy-light text-wmGold font-bold py-2.5 rounded-lg text-sm transition-colors">
+                            Ask About Repairs
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Areas Section -->
+        <section id="areas" class="py-16 bg-wmNavy text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-wmGold font-bold uppercase tracking-wider text-sm">Where We Work</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white mt-1">Areas We Cover</h2>
+                    <p class="text-gray-300 mt-2">Based in the West Midlands, we provide prompt call-outs across 5 major counties.</p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    
+                    <!-- Area 1 -->
+                    <div class="bg-wmNavy-light border border-wmGold/30 rounded-xl p-5 text-center hover:border-wmGold transition-all transform hover:-translate-y-1 shadow">
+                        <div class="w-10 h-10 bg-wmGold rounded-full flex items-center justify-center text-wmNavy mx-auto mb-3 font-bold">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-white">West Midlands</h3>
+                        <p class="text-xs text-gray-300 mt-1">Birmingham, Dudley, Wolverhampton, Walsall, Solihull & surrounding</p>
+                    </div>
+
+                    <!-- Area 2 -->
+                    <div class="bg-wmNavy-light border border-wmGold/30 rounded-xl p-5 text-center hover:border-wmGold transition-all transform hover:-translate-y-1 shadow">
+                        <div class="w-10 h-10 bg-wmGold rounded-full flex items-center justify-center text-wmNavy mx-auto mb-3 font-bold">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-white">Worcestershire</h3>
+                        <p class="text-xs text-gray-300 mt-1">Kidderminster, Worcester, Bromsgrove, Redditch & surrounding</p>
+                    </div>
+
+                    <!-- Area 3 -->
+                    <div class="bg-wmNavy-light border border-wmGold/30 rounded-xl p-5 text-center hover:border-wmGold transition-all transform hover:-translate-y-1 shadow">
+                        <div class="w-10 h-10 bg-wmGold rounded-full flex items-center justify-center text-wmNavy mx-auto mb-3 font-bold">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-white">Shropshire</h3>
+                        <p class="text-xs text-gray-300 mt-1">Telford, Shrewsbury, Bridgnorth & surrounding areas</p>
+                    </div>
+
+                    <!-- Area 4 -->
+                    <div class="bg-wmNavy-light border border-wmGold/30 rounded-xl p-5 text-center hover:border-wmGold transition-all transform hover:-translate-y-1 shadow">
+                        <div class="w-10 h-10 bg-wmGold rounded-full flex items-center justify-center text-wmNavy mx-auto mb-3 font-bold">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-white">Warwickshire</h3>
+                        <p class="text-xs text-gray-300 mt-1">Warwick, Leamington Spa, Nuneaton, Rugby & surrounding</p>
+                    </div>
+
+                    <!-- Area 5 -->
+                    <div class="bg-wmNavy-light border border-wmGold/30 rounded-xl p-5 text-center hover:border-wmGold transition-all transform hover:-translate-y-1 shadow col-span-2 sm:col-span-1">
+                        <div class="w-10 h-10 bg-wmGold rounded-full flex items-center justify-center text-wmNavy mx-auto mb-3 font-bold">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-white">Staffordshire</h3>
+                        <p class="text-xs text-gray-300 mt-1">Stafford, Cannock, Tamworth, Lichfield & surrounding</p>
+                    </div>
+
+                </div>
+
+                <!-- Callout Banner -->
+                <div class="mt-10 bg-gradient-to-r from-wmGold to-yellow-500 text-wmNavy rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-2xl font-black">Not sure if we cover your area?</h3>
+                        <p class="font-medium text-sm sm:text-base opacity-90">Give us a quick ring or text on WhatsApp to double check availability!</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="tel:07438349585" class="bg-wmNavy text-white hover:bg-wmNavy-dark font-bold px-6 py-3 rounded-xl transition-all shadow text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Call 07438 349585
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="about" class="py-16 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-black text-wmNavy">Why Choose WM Repairs?</h2>
+                    <p class="text-gray-600 mt-2">Dedicated local service with customer satisfaction at the heart of everything we do.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center">
+                        <div class="w-16 h-16 bg-wmGold/20 text-wmNavy rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            <i class="fa-solid fa-user-check text-wmNavy"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-wmNavy mb-2">Friendly & Professional</h3>
+                        <p class="text-gray-600 text-sm">Dependable local engineer providing friendly service with respect for your home.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center">
+                        <div class="w-16 h-16 bg-wmGold/20 text-wmNavy rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            <i class="fa-solid fa-bolt text-wmNavy"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-wmNavy mb-2">Fast Turnaround</h3>
+                        <p class="text-gray-600 text-sm">We know how essential home appliances are. We aim to get your machines working as quickly as possible.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-center">
+                        <div class="w-16 h-16 bg-wmGold/20 text-wmNavy rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                            <i class="fa-solid fa-hand-holding-dollar text-wmNavy"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-wmNavy mb-2">Competitive Rates</h3>
+                        <p class="text-gray-600 text-sm">Honest, upfront pricing without hidden surprises or unnecessary repair charges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Booking Section -->
+        <section id="contact" class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Contact Info Left Column -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div>
+                            <span class="text-wmGold font-bold uppercase tracking-wider text-sm">Get In Touch</span>
+                            <h2 class="text-3xl sm:text-4xl font-black text-wmNavy mt-1">Contact WM Repairs</h2>
+                            <p class="text-gray-600 mt-2">Ready to book a repair or have a question? Contact us directly or send an enquiry form.</p>
+                        </div>
+
+                        <!-- Direct Call Card -->
+                        <a href="tel:07438349585" class="block bg-wmNavy text-white p-5 rounded-2xl shadow hover:bg-wmNavy-light transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-wmGold text-wmNavy flex items-center justify-center text-xl font-bold shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-wmGold uppercase tracking-wider font-bold">Call Work Mobile</span>
+                                    <div class="text-xl sm:text-2xl font-black">07438 349585</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Direct WhatsApp Card -->
+                        <a href="https://wa.me/447438349585" target="_blank" class="block bg-green-600 text-white p-5 rounded-2xl shadow hover:bg-green-700 transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white text-green-600 flex items-center justify-center text-2xl font-bold shrink-0">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-green-200 uppercase tracking-wider font-bold">Instant Chat</span>
+                                    <div class="text-xl sm:text-2xl font-black">WhatsApp 07438 349585</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Email Contacts Box -->
+                        <div class="bg-gray-50 border-2 border-gray-100 p-5 rounded-2xl space-y-3">
+                            <h4 class="font-bold text-wmNavy flex items-center gap-2">
+                                <i class="fa-solid fa-envelope text-wmGold"></i> Email Us
+                            </h4>
+                            <div class="space-y-1 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500 font-medium">Outlook:</span>
+                                    <a href="mailto:wm_repairs@outlook.com" class="text-wmNavy font-bold hover:text-wmGold transition-colors">wm_repairs@outlook.com</a>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-500 font-medium">Gmail:</span>
+                                    <a href="mailto:wmrepairs1982@gmail.com" class="text-wmNavy font-bold hover:text-wmGold transition-colors">wmrepairs1982@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="bg-gray-50 border-2 border-gray-100 p-5 rounded-2xl space-y-3">
+                            <h4 class="font-bold text-wmNavy flex items-center gap-2">
+                                <i class="fa-solid fa-share-nodes text-wmGold"></i> Follow & Connect
+                            </h4>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="https://www.facebook.com/people/WM-Repairs/61588560510118/" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center text-sm transition-colors flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-facebook-f"></i> Facebook
+                                </a>
+                                <a href="https://www.instagram.com/wm_repairs/?utm_source=ig_web_button_share_sheet" target="_blank" class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-95 text-white font-semibold py-2.5 px-4 rounded-xl text-center text-sm transition-colors flex items-center justify-center gap-2">
+                                    <i class="fa-brands fa-instagram"></i> Instagram
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Interactive Quote/Booking Form Right Column -->
+                    <div class="lg:col-span-7 bg-gray-50 border-2 border-gray-200 rounded-3xl p-6 sm:p-8 shadow-sm">
+                        <h3 class="text-2xl font-bold text-wmNavy mb-2">Request a Repair Quote</h3>
+                        <p class="text-gray-600 text-sm mb-6">Fill out the quick form below and we will get back to you as soon as possible.</p>
+
+                        <form id="quote-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-wmNavy uppercase mb-1">Your Name *</label>
+                                    <input type="text" required placeholder="John Smith" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-wmGold focus:border-wmNavy outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-wmNavy uppercase mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="07123 456789" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-wmGold focus:border-wmNavy outline-none transition-all">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-wmNavy uppercase mb-1">Town / Postcode *</label>
+                                    <input type="text" required placeholder="e.g. Dudley, DY1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-wmGold focus:border-wmNavy outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-wmNavy uppercase mb-1">Appliance Type *</label>
+                                    <select required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-wmGold focus:border-wmNavy outline-none transition-all bg-white">
+                                        <option value="">Select Appliance</option>
+                                        <option value="Washing Machine">Washing Machine</option>
+                                        <option value="Cooker / Oven / Hob">Cooker / Oven / Hob</option>
+                                        <option value="Tumble Dryer">Tumble Dryer</option>
+                                        <option value="Dishwasher">Dishwasher</option>
+                                        <option value="Other">Other Domestic Appliance</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-wmNavy uppercase mb-1">Appliance Make / Model & Fault Details</label>
+                                <textarea rows="4" placeholder="e.g. AEG Washing Machine not draining properly..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-wmGold focus:border-wmNavy outline-none transition-all"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-wmGold hover:bg-wmGold-hover text-wmNavy font-black text-base py-4 rounded-xl shadow-md transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Send Repair Enquiry</span>
+                            </button>
+                        </form>
+
+                        <div id="form-success-msg" class="hidden mt-4 bg-green-100 border border-green-400 text-green-800 p-4 rounded-xl text-center text-sm font-semibold">
+                            <i class="fa-solid fa-circle-check text-lg mr-2 text-green-600"></i> Thank you! Your message has been prepared. You can also contact us directly on 07438 349585 for immediate response.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-wmNavy-dark text-white border-t-4 border-wmGold py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                
+                <!-- Brand Info -->
+                <div class="space-y-3 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-wmGold text-wmNavy flex items-center justify-center font-black">
+                            <i class="fa-solid fa-wrench text-xs"></i>
+                        </div>
+                        <span class="text-xl font-black text-white">WM <span class="text-wmGold">REPAIRS</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Professional domestic appliance repairs and maintenance serving domestic properties across West Midlands and surrounding counties.
+                    </p>
+                </div>
+
+                <!-- Contact Summary -->
+                <div>
+                    <h4 class="text-sm font-bold text-wmGold uppercase tracking-wider mb-3">Direct Contact</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li>
+                            <i class="fa-solid fa-phone text-wmGold mr-1.5"></i>
+                            <a href="tel:07438349585" class="hover:text-white">07438 349585</a>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-whatsapp text-green-400 mr-1.5"></i>
+                            <a href="https://wa.me/447438349585" target="_blank" class="hover:text-white">WhatsApp Direct</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope text-wmGold mr-1.5"></i>
+                            <a href="mailto:wm_repairs@outlook.com" class="hover:text-white">wm_repairs@outlook.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope text-wmGold mr-1.5"></i>
+                            <a href="mailto:wmrepairs1982@gmail.com" class="hover:text-white">wmrepairs1982@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coverage -->
+                <div>
+                    <h4 class="text-sm font-bold text-wmGold uppercase tracking-wider mb-3">Counties Covered</h4>
+                    <ul class="space-y-1.5 text-xs text-gray-300">
+                        <li><i class="fa-solid fa-angle-right text-wmGold mr-1"></i> West Midlands</li>
+                        <li><i class="fa-solid fa-angle-right text-wmGold mr-1"></i> Worcestershire</li>
+                        <li><i class="fa-solid fa-angle-right text-wmGold mr-1"></i> Shropshire</li>
+                        <li><i class="fa-solid fa-angle-right text-wmGold mr-1"></i> Warwickshire</li>
+                        <li><i class="fa-solid fa-angle-right text-wmGold mr-1"></i> Staffordshire</li>
+                    </ul>
+                </div>
+
+                <!-- Social & Hours -->
+                <div>
+                    <h4 class="text-sm font-bold text-wmGold uppercase tracking-wider mb-3">Connect With Us</h4>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="https://www.facebook.com/people/WM-Repairs/61588560510118/" target="_blank" class="w-9 h-9 rounded-lg bg-wmNavy-light flex items-center justify-center text-white hover:bg-wmGold hover:text-wmNavy transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/wm_repairs/?utm_source=ig_web_button_share_sheet" target="_blank" class="w-9 h-9 rounded-lg bg-wmNavy-light flex items-center justify-center text-white hover:bg-wmGold hover:text-wmNavy transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/447438349585" target="_blank" class="w-9 h-9 rounded-lg bg-green-600 flex items-center justify-center text-white hover:bg-green-500 transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p class="text-xs text-gray-400">Available for local domestic repairs & diagnostics.</p>
+                </div>
+
+            </div>
+
+            <div class="pt-6 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; WM Repairs. All rights reserved.</p>
+                <p>Call work mobile: <a href="tel:07438349585" class="text-wmGold font-semibold">07438 349585</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating WhatsApp Button for Quick Mobile Access -->
+    <a href="https://wa.me/447438349585" target="_blank" class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-white">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Toggle Mobile Navigation
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on clicking links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('form-success-msg');
+            successMsg.classList.remove('hidden');
+            document.getElementById('quote-form').reset();
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
 </body>
 </html>
