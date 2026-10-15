@@ -673,3 +673,65 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-wmNavy border-2 border-wmGold flex items-center justify-center overflow-hidden shrink-0">
+                            <img src="logo.png" alt="WM Repairs Logo" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <span class="text-xl font-black tracking-tight text-white">WM <span class="text-wmGold">REPAIRS</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm max-w-sm">
+                        Professional domestic appliance repairs and servicing. Prompt call-outs across the West Midlands, Worcestershire, Shropshire, Warwickshire, and Staffordshire.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-wmGold font-bold mb-3 uppercase text-xs tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#services" class="hover:text-wmGold transition-colors">Our Services</a></li>
+                        <li><a href="#areas" class="hover:text-wmGold transition-colors">Areas Covered</a></li>
+                        <li><a href="#about" class="hover:text-wmGold transition-colors">Why Choose Us</a></li>
+                        <li><a href="#reviews" class="hover:text-wmGold transition-colors">Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-wmGold transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-wmGold font-bold mb-3 uppercase text-xs tracking-wider">Direct Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="tel:07438349585" class="hover:text-wmGold transition-colors font-semibold">07438 349585</a></li>
+                        <li><a href="https://wa.me/447438349585" target="_blank" class="hover:text-green-400 transition-colors">WhatsApp Chat</a></li>
+                        <li><a href="mailto:wm_repairs@outlook.com" class="hover:text-wmGold transition-colors">wm_repairs@outlook.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2026 WM Repairs. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Domestic Appliance Specialists</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Form Submission Script -->
+    <script>
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('cust-name').value;
+            const phone = document.getElementById('cust-phone').value;
+            const appliance = document.getElementById('cust-appliance').value;
+            const message = document.getElementById('cust-message').value;
+
+            const text = `*New Appliance Repair Enquiry*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Appliance:* ${encodeURIComponent(appliance)}%0A*Issue:* ${encodeURIComponent(message)}`;
+            
+            window.open(`https://wa.me/447438349585?text=${text}`, '_blank');
+        }
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
