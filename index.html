@@ -641,7 +641,9 @@ Ask About Repairs
 <select id="cust-appliance" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:border-wmGold font-medium text-sm">
 <option value="Washing Machine">Washing Machine</option>
 <option value="Fridge Freezer">Fridge Freezer</option>
-<option value="Electric Cooker">Electric Cooker</option>
+<option value="Fridge">Fridge</option>
+<option value="Fridge">Freezer</option>
+<option value="Electric Cooker / Oven">Electric Cooker / Oven</option>
 <option value="Electric Hob">Electric Hob</option>
 <option value="Tumble Dryer">Tumble Dryer</option>
 <option value="Dishwasher">Dishwasher</option>
@@ -714,16 +716,30 @@ Professional domestic appliance repairs and servicing. Prompt call-outs across t
 <!-- WhatsApp Form Submission Script -->
 <script>
 function sendToWhatsApp(e) {
-e.preventDefault();
-const name = document.getElementById('cust-name').value;
-const phone = document.getElementById('cust-phone').value;
-const appliance = document.getElementById('cust-appliance').value;
-const message = document.getElementById('cust-message').value;
+    e.preventDefault();
 
-const text = `*New Appliance Repair Enquiry*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Appliance:* ${encodeURIComponent(appliance)}%0A*Issue:* ${encodeURIComponent(message)}`;
+    const name = document.getElementById('cust-name').value;
+    const phone = document.getElementById('cust-phone').value;
+    const appliance = document.getElementById('cust-appliance').value;
+    const make = document.getElementById('cust-make').value;
+    const model = document.getElementById('cust-model').value;
+    const message = document.getElementById('cust-message').value;
 
-window.open(`https://wa.me/447438349585?text=${text}`, '_blank');
+    const text = `*New Appliance Repair Enquiry*
+
+*Name:* ${name}
+*Phone:* ${phone}
+*Appliance:* ${appliance}
+*Make/Brand:* ${make || 'Not provided'}
+*Model Number:* ${model || 'Not provided'}
+*Issue:* ${message}`;
+
+    window.open(
+        `https://wa.me/447438349585?text=${encodeURIComponent(text)}`,
+        '_blank'
+    );
 }
+</script>
 
 // Mobile menu toggle
 const btn = document.getElementById('mobile-menu-btn');
