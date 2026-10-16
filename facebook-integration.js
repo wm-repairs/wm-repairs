@@ -26,7 +26,7 @@
     if (!socialsLink) {
       socialsLink = makeLink(
         'Where to Find Us',
-        'inline-flex items-center whitespace-nowrap px-2 py-2 hover:text-wmGold transition-colors',
+        'inline-flex items-center whitespace-nowrap hover:text-wmGold transition-colors'
         socialPage
       );
       socialsLink.dataset.wmSocialsNav = 'desktop';
@@ -36,7 +36,7 @@
     if (!nav.querySelector('[data-wm-faq-nav="desktop"]')) {
       const faqLink = makeLink(
         'FAQs',
-        'inline-flex items-center whitespace-nowrap px-2 py-2 hover:text-wmGold transition-colors',
+        'inline-flex items-center whitespace-nowrap hover:text-wmGold transition-colors'
         faqPage
       );
       faqLink.dataset.wmFaqNav = 'desktop';
