@@ -34,10 +34,10 @@
     if (!nav.querySelector('[data-wm-faq-nav="desktop"]')) {
       const socialsLink = nav.querySelector('[data-wm-socials-nav="desktop"]');
       const link = makeLink(
-        'FAQs',
-        'hover:text-wmGold transition-colors',
-        faqPage
-      );
+      'FAQs',
+      'hover:text-wmGold transition-colors',
+      faqPage
+        );
       link.dataset.wmFaqNav = 'desktop';
       (socialsLink || reviewsLink).insertAdjacentElement('afterend', link);
     }
