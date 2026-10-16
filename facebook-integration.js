@@ -23,9 +23,10 @@
 
     if (!nav.querySelector('[data-wm-socials-nav="desktop"]')) {
       const link = makeLink(
-        'Where to Find Us',
-        'hover:text-wmGold transition-colors',
-        socialPage
+  'Where to Find Us',
+  'inline-flex items-center whitespace-nowrap px-2 py-2 hover:text-wmGold transition-colors',
+  socialPage
+);
       );
       link.dataset.wmSocialsNav = 'desktop';
       reviewsLink.insertAdjacentElement('afterend', link);
