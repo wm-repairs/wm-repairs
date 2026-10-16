@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs | WM Repairs</title>
+  <meta name="description" content="Frequently asked questions about WM Repairs appliance repair services, call-out fees, coverage and availability.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wmNavy: '#0b1f3a',
+            wmGold: '#f5b829'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-wmNavy text-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-4">
+      <a href="index.html" class="text-2xl font-extrabold tracking-wide">
+        WM <span class="text-wmGold">REPAIRS</span>
+      </a>
+      <a href="index.html"
+         class="border border-wmGold text-wmGold px-4 py-2 rounded-lg font-semibold hover:bg-wmGold hover:text-wmNavy transition">
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- FAQ Introduction -->
+  <main class="max-w-4xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <p class="text-wmGold font-bold uppercase tracking-widest text-sm mb-3">
+        Help & Information
+      </p>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-wmNavy">
+        Frequently Asked Questions
+      </h1>
+      <p class="mt-5 text-gray-600 text-lg">
+        Everything you need to know about our appliance repair services.
+      </p>
+    </div>
+
+    <!-- Questions -->
+    <div class="space-y-4">
+
+      <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-wmNavy">
+          Do you charge a call-out fee?
+          <span class="text-wmGold text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+          We charge a competitive call-out fee, which may vary depending on your location and appliance. This will generally be between £45 and £65. In many cases, if we can complete the repair without additional parts, there will be no extra charges.
+        </div>
+      </details>
+
+      <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-wmNavy">
+          Where are you based?
+          <span class="text-wmGold text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+          We are based in Hagley, Worcestershire, and cover the majority of the West Midlands, generally within a 30-mile radius of Birmingham.
+        </div>
+      </details>
+
+      <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-wmNavy">
+          How quickly can you come out?
+          <span class="text-wmGold text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+          We aim to attend as quickly as possible. Availability depends on the areas we are covering that day, but in most cases we can visit the same day or the following day.
+        </div>
+      </details>
+
+      <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 p-6 font-bold text-wmNavy">
+          Do you repair gas appliances?
+          <span class="text-wmGold text-2xl group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+          We currently repair electric appliances only, for which we are fully qualified and insured.
+        </div>
+      </details>
+
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="mt-12 bg-wmNavy rounded-2xl p-8 text-center text-white">
+      <h2 class="text-2xl font-bold">Still have a question?</h2>
+      <p class="mt-3 text-gray-300">
+        Get in touch with WM Repairs and we'll be happy to help.
+      </p>
+      <a href="index.html#contact"
+         class="inline-block mt-6 bg-wmGold text-wmNavy font-bold px-6 py-3 rounded-xl hover:opacity-90 transition">
+        Contact Us
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-wmNavy text-gray-300 text-center py-6">
+    <p>&copy; <span id="year"></span> WM Repairs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
