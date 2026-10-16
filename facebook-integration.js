@@ -21,26 +21,26 @@
     const reviewsLink = nav.querySelector('a[href="#reviews"]');
     if (!reviewsLink) return;
 
-    if (!nav.querySelector('[data-wm-socials-nav="desktop"]')) {
-      const link = makeLink(
-  'Where to Find Us',
-  'inline-flex items-center whitespace-nowrap px-2 py-2 hover:text-wmGold transition-colors',
-  socialPage
-);
+    let socialsLink = nav.querySelector('[data-wm-socials-nav="desktop"]');
+
+    if (!socialsLink) {
+      socialsLink = makeLink(
+        'Where to Find Us',
+        'inline-flex items-center whitespace-nowrap px-2 py-2 hover:text-wmGold transition-colors',
+        socialPage
       );
-      link.dataset.wmSocialsNav = 'desktop';
-      reviewsLink.insertAdjacentElement('afterend', link);
+      socialsLink.dataset.wmSocialsNav = 'desktop';
+      reviewsLink.insertAdjacentElement('afterend', socialsLink);
     }
 
     if (!nav.querySelector('[data-wm-faq-nav="desktop"]')) {
-      const socialsLink = nav.querySelector('[data-wm-socials-nav="desktop"]');
-      const link = makeLink(
-      'FAQs',
-      'hover:text-wmGold transition-colors',
-      faqPage
-        );
-      link.dataset.wmFaqNav = 'desktop';
-      (socialsLink || reviewsLink).insertAdjacentElement('afterend', link);
+      const faqLink = makeLink(
+        'FAQs',
+        'inline-flex items-center whitespace-nowrap px-2 py-2 hover:text-wmGold transition-colors',
+        faqPage
+      );
+      faqLink.dataset.wmFaqNav = 'desktop';
+      socialsLink.insertAdjacentElement('afterend', faqLink);
     }
   }
 
@@ -51,25 +51,26 @@
     const contactLink = menu.querySelector('a[href="#contact"]');
     if (!contactLink) return;
 
-    if (!menu.querySelector('[data-wm-socials-nav="mobile"]')) {
-      const link = makeLink(
+    let socialsLink = menu.querySelector('[data-wm-socials-nav="mobile"]');
+
+    if (!socialsLink) {
+      socialsLink = makeLink(
         'Where to Find Us',
         'block py-2 text-white hover:text-wmGold font-medium border-b border-gray-700',
         socialPage
       );
-      link.dataset.wmSocialsNav = 'mobile';
-      contactLink.insertAdjacentElement('afterend', link);
+      socialsLink.dataset.wmSocialsNav = 'mobile';
+      contactLink.insertAdjacentElement('afterend', socialsLink);
     }
 
     if (!menu.querySelector('[data-wm-faq-nav="mobile"]')) {
-      const socialsLink = menu.querySelector('[data-wm-socials-nav="mobile"]');
-      const link = makeLink(
+      const faqLink = makeLink(
         'FAQs',
         'block py-2 text-white hover:text-wmGold font-medium border-b border-gray-700',
         faqPage
       );
-      link.dataset.wmFaqNav = 'mobile';
-      (socialsLink || contactLink).insertAdjacentElement('afterend', link);
+      faqLink.dataset.wmFaqNav = 'mobile';
+      socialsLink.insertAdjacentElement('afterend', faqLink);
     }
   }
 
