@@ -134,8 +134,6 @@
   }
 
   function initialise() {
-    addDesktopNavigationLink();
-    addMobileNavigationLink();
     updateFollowAndConnectBox();
     addFooterQuickLink();
   }
