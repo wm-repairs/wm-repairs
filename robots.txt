@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wm-repairs.co.uk/sitemap.xml
